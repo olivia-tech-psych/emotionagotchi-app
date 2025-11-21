@@ -79,3 +79,38 @@ a {
     scroll-behavior: auto !important;
   }
 }
+
+/* Responsive typography - Requirement 7.5 */
+@media (max-width: 600px) {
+  :root {
+    --font-size-heading: 20px;
+    --font-size-body: 15px;
+    --font-size-small: 13px;
+    --font-size-tiny: 11px;
+  }
+}
+
+@media (max-width: 400px) {
+  :root {
+    --font-size-heading: 18px;
+    --font-size-body: 14px;
+    --font-size-small: 12px;
+    --font-size-tiny: 10px;
+  }
+}
+
+/* Ensure minimum touch target sizes - Requirement 7.5 */
+button,
+a,
+input,
+textarea,
+select {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Exception for inline elements */
+a:not([role="button"]) {
+  min-height: auto;
+  min-width: auto;
+}

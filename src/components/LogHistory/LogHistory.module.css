@@ -132,3 +132,52 @@
   text-align: center;
   max-width: 300px;
 }
+
+/* Responsive design for mobile - Requirement 7.5 */
+@media (max-width: 600px) {
+  .container {
+    padding: var(--spacing-sm);
+    max-height: 500px;
+  }
+  
+  .logItem {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-xs);
+  }
+  
+  .icon {
+    font-size: 18px;
+  }
+  
+  .timestamp {
+    font-size: 13px;
+  }
+  
+  .text {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: var(--spacing-xs);
+    max-height: 400px;
+  }
+  
+  .logList {
+    gap: var(--spacing-xs);
+  }
+  
+  .logItem {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .emptyState {
+    min-height: 150px;
+    padding: var(--spacing-lg);
+  }
+  
+  .emptyMessage {
+    font-size: 15px;
+  }
+}

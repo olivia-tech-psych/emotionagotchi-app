@@ -74,3 +74,21 @@
     transform: translateY(0);
   }
 }
+
+/* Responsive design for mobile - Requirement 7.5 */
+@media (max-width: 600px) {
+  .textarea {
+    font-size: 16px; /* Prevent zoom on iOS */
+    min-height: 80px;
+  }
+  
+  .label {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    gap: var(--spacing-xs);
+  }
+}

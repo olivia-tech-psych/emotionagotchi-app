@@ -121,3 +121,30 @@
   filter: brightness(1.5);
   box-shadow: var(--glow-mint), var(--glow-lavender);
 }
+
+/* Responsive design for mobile - Requirement 7.5 */
+@media (max-width: 600px) {
+  .creature {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .creature::before,
+  .creature::after {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .creature {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .creature::before,
+  .creature::after {
+    width: 8px;
+    height: 8px;
+  }
+}

@@ -48,3 +48,23 @@
   outline-offset: 4px;
   border-radius: 4px;
 }
+
+/* Responsive design for mobile - Requirement 7.5 */
+@media (max-width: 600px) {
+  .historyLink,
+  .backLink {
+    font-size: 15px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    min-height: 44px; /* Touch-friendly size */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .historyLink,
+  .backLink {
+    font-size: 14px;
+  }
+}

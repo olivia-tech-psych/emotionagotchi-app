@@ -54,3 +54,30 @@
   width: 100%;
   margin: 0 auto;
 }
+
+/* Responsive design for mobile - Requirement 7.5 */
+@media (max-width: 600px) {
+  .container {
+    padding: var(--spacing-md);
+  }
+  
+  .title {
+    font-size: 20px;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .backLink {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: var(--spacing-sm);
+  }
+  
+  .title {
+    font-size: 18px;
+    margin-bottom: var(--spacing-md);
+  }
+}

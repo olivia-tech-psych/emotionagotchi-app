@@ -28,3 +28,28 @@
   transition: width var(--transition-medium);
   border-radius: 12px;
 }
+
+/* Responsive design for mobile - Requirement 7.5 */
+@media (max-width: 600px) {
+  .container {
+    padding: var(--spacing-sm);
+  }
+  
+  .label {
+    font-size: 15px;
+  }
+  
+  .barBackground {
+    height: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: var(--spacing-xs);
+  }
+  
+  .label {
+    font-size: 14px;
+  }
+}
