@@ -1,0 +1,115 @@
+/**
+ * LogHistory Component Styles
+ * Requirements: 6.1, 6.2, 6.3, 6.4, 6.5, 7.1, 7.2
+ */
+
+/* Container with scrolling support */
+/* Requirement 6.4: Scrolling for long lists */
+.container {
+  width: 100%;
+  max-height: 600px;
+  overflow-y: auto;
+  padding: var(--spacing-md);
+}
+
+/* Custom scrollbar styling for dark theme */
+.container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+  border-radius: 4px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: var(--color-lavender);
+  border-radius: 4px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: var(--color-mint);
+}
+
+/* Log list */
+.logList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Individual log item */
+/* Requirement 6.2: Display with appropriate styling */
+.logItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background: var(--color-bg-secondary);
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.logItem:hover {
+  transform: translateX(4px);
+}
+
+/* Requirement 6.5: Visual indicators for expressed vs suppressed */
+.logItem.expressed {
+  border-left-color: var(--color-mint);
+}
+
+.logItem.suppressed {
+  border-left-color: #8b7fa8; /* Muted lavender */
+}
+
+/* Icon styling */
+.icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* Log content container */
+.logContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* Timestamp styling */
+/* Requirement 6.2: Display timestamp */
+.timestamp {
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Emotion text styling */
+/* Requirement 6.2: Display emotion text */
+.text {
+  font-size: var(--font-size-body);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/* Empty state styling */
+/* Requirement 6.3: Empty state message */
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: var(--spacing-xl);
+}
+
+.emptyMessage {
+  font-size: var(--font-size-body);
+  color: var(--color-text-secondary);
+  text-align: center;
+  max-width: 300px;
+}
