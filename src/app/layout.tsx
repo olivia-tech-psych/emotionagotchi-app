@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { EmotionProvider } from '@/context/EmotionContext'
 
 export const metadata: Metadata = {
   title: 'Emotionagotchi',
@@ -13,7 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <EmotionProvider>
+          {children}
+        </EmotionProvider>
+      </body>
     </html>
   )
 }
