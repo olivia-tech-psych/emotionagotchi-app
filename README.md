@@ -13,6 +13,7 @@ Emotionagotchi is a modern resurrection of the classic Tamagotchi (1996 digital 
 - **ActionButtons Component**: Express and Suppress buttons with pastel styling, disabled state handling, and accessibility features
 - **Creature Component**: Animated blob creature with four animation states (idle, grow, curl, celebrate), dynamic brightness filtering, and size scaling based on emotional state
 - **SafetyBar Component**: Progress bar displaying inner safety score with mint-colored fill, smooth growth animation, and numeric score display
+- **LogHistory Component**: Displays emotion logs in reverse chronological order with human-readable timestamps, visual indicators for expressed/suppressed actions, empty state handling, and scrollable list
 - **Property-Based Testing**: fast-check integration for testing creature brightness calculations and text contrast accessibility
 - **Unit Testing**: Comprehensive test coverage using Vitest and React Testing Library
 
@@ -39,6 +40,11 @@ emotionagotchi-app/
 │   │   │   ├── EmotionInput.tsx
 │   │   │   ├── EmotionInput.test.tsx
 │   │   │   ├── EmotionInput.module.css
+│   │   │   └── index.ts
+│   │   ├── LogHistory/         # Emotion log history display
+│   │   │   ├── LogHistory.tsx
+│   │   │   ├── LogHistory.test.tsx
+│   │   │   ├── LogHistory.module.css
 │   │   │   └── index.ts
 │   │   └── SafetyBar/          # Inner safety score progress bar
 │   │       ├── SafetyBar.tsx
@@ -137,3 +143,12 @@ npm run test:watch
 - Calculates percentage fill based on score/maxScore ratio (default max: 100)
 - Styled with dark pastel theme matching overall design system
 - Completed Task 10 from implementation plan
+
+### [2025-11-21 LogHistory Component]
+- Implemented LogHistory component for displaying emotion logs in reverse chronological order
+- Added human-readable timestamp formatting (Today, Yesterday, or date with time)
+- Implemented visual indicators with emoji icons (🌱 for expressed, 🌑 for suppressed)
+- Created empty state message for when no logs exist
+- Added scrollable container for long lists of emotion logs
+- Styled with dark pastel theme using mint accent for expressed and muted lavender for suppressed
+- Completed Task 13 from implementation plan
