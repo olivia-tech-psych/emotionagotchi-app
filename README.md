@@ -10,6 +10,7 @@ Emotionagotchi is a modern resurrection of the classic Tamagotchi (1996 digital 
 - **Global State Management**: React Context API implementation (EmotionContext) for managing application state
 - **Theme System**: Dark pastel color palette with CSS custom properties
 - **EmotionInput Component**: Text input with 100-character limit, real-time character counter, and auto-focus
+- **ActionButtons Component**: Express and Suppress buttons with pastel styling, disabled state handling, and accessibility features
 - **Property-Based Testing**: fast-check integration for testing creature brightness calculations and text contrast accessibility
 - **Unit Testing**: Comprehensive test coverage using Vitest and React Testing Library
 
@@ -23,6 +24,10 @@ emotionagotchi-app/
 │   │   ├── layout.tsx          # Root layout
 │   │   └── page.tsx            # Main page (placeholder)
 │   ├── components/
+│   │   ├── ActionButtons/      # Express/Suppress action buttons
+│   │   │   ├── ActionButtons.tsx
+│   │   │   ├── ActionButtons.module.css
+│   │   │   └── index.ts
 │   │   └── EmotionInput/       # Emotion log input component
 │   │       ├── EmotionInput.tsx
 │   │       ├── EmotionInput.test.tsx
@@ -96,3 +101,11 @@ npm run test:watch
 - Implemented EmotionContext for global state management
 - Created EmotionInput component with character counter and auto-focus
 - Added comprehensive test coverage including property-based tests for brightness calculations and contrast accessibility
+
+### [2025-11-21 ActionButtons Component]
+- Implemented ActionButtons component with Express and Suppress buttons
+- Added pastel styling with mint color for Express and lavender for Suppress
+- Implemented disabled state handling when no text is entered
+- Added hover effects, focus indicators, and smooth transitions
+- Included accessibility features with ARIA labels and keyboard support
+- Completed Task 8 from implementation plan
