@@ -197,4 +197,87 @@ describe('EmotionInput', () => {
     const counter = screen.getByText('100/100');
     expect(counter).toHaveAttribute('aria-live', 'polite');
   });
+
+  /**
+   * Error condition tests
+   * Requirement 1.4: Empty input validation
+   */
+  describe('Empty input validation', () => {
+    it('should not show validation error by default', () => {
+      const onChange = vi.fn();
+      
+      render(
+        <EmotionInput 
+          value="" 
+          onChange={onChange} 
+          maxLength={100} 
+        />
+      );
+
+      expect(screen.queryByText('Share a feeling to continue')).not.toBeInTheDocument();
+    });
+
+    it('should show validation error when showEmptyError is true and input is empty', () => {
+      const onChange = vi.fn();
+      
+      render(
+        <EmotionInput 
+          value="" 
+          onChange={onChange} 
+          maxLength={100}
+          showEmptyError={true}
+        />
+      );
+
+      const errorMessage = screen.getByText('Share a feeling to continue');
+      expect(errorMessage).toBeInTheDocument();
+      expect(errorMessage).toHaveAttribute('role', 'alert');
+      expect(errorMessage).toHaveAttribute('aria-live', 'assertive');
+    });
+
+    it('should show validation error for whitespace-only input', () => {
+      const onChange = vi.fn();
+      
+      render(
+        <EmotionInput 
+          value="   " 
+          onChange={onChange} 
+          maxLength={100}
+          showEmptyError={true}
+        />
+      );
+
+      expect(screen.getByText('Share a feeling to continue')).toBeInTheDocument();
+    });
+
+    it('should not show validation error when input has content', () => {
+      const onChange = vi.fn();
+      
+      render(
+        <EmotionInput 
+          value="Feeling happy" 
+          onChange={onChange} 
+          maxLength={100}
+          showEmptyError={true}
+        />
+      );
+
+      expect(screen.queryByText('Share a feeling to continue')).not.toBeInTheDocument();
+    });
+
+    it('should hide validation error when showEmptyError is false', () => {
+      const onChange = vi.fn();
+      
+      render(
+        <EmotionInput 
+          value="" 
+          onChange={onChange} 
+          maxLength={100}
+          showEmptyError={false}
+        />
+      );
+
+      expect(screen.queryByText('Share a feeling to continue')).not.toBeInTheDocument();
+    });
+  });
 });
